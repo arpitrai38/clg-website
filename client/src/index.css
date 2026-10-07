@@ -1,0 +1,559 @@
+/* ==========================================================================
+   Eudaimonia - University & College Design System
+   ========================================================================== */
+
+:root {
+  /* Brand Colors - Eudaimonia Wine Red & Deep Burgundy */
+  --color-primary: #9D2235;
+  --color-primary-light: #b82b40;
+  --color-primary-dark: #641320;
+  --color-eudaimonia-wine: #9D2235;
+  --color-eudaimonia-dark: #641320;
+  --color-secondary: #212121;
+  --color-accent: #d6b161;
+  --color-accent-hover: #b58d3c;
+  --color-accent-subtle: #fef7e6;
+  --color-gold: #ffb606;
+  --color-emerald: #10b981;
+  --color-rose: #dc2626;
+
+  /* Neutrals */
+  --bg-page: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-subtle: #f7f7f7;
+  --bg-glass: rgba(255, 255, 255, 0.95);
+  --border-subtle: #eceff8;
+  --border-strong: #d1d5db;
+
+  /* Typography */
+  --text-main: #212121;
+  --text-secondary: #666666;
+  --text-muted: #8a8a8a;
+  --text-inverse: #ffffff;
+
+  /* Gradients */
+  --grad-primary: linear-gradient(135deg, #641320 0%, #9D2235 100%);
+  --grad-hero: linear-gradient(135deg, rgba(4, 15, 45, 0.75) 0%, rgba(100, 19, 32, 0.75) 100%);
+  --grad-accent: linear-gradient(135deg, #9D2235 0%, #b82b40 100%);
+  --grad-card-glow: radial-gradient(circle at 50% 0%, rgba(157, 34, 53, 0.12) 0%, transparent 75%);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(25, 25, 25, 0.1);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.12);
+
+  /* Radii - Eudaimonia uses crisp clean architectural corners */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease-out;
+  --transition-smooth: 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  /* Fonts - Prata serif headings + Inter clean body */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Prata', serif;
+  --font-serif: 'Prata', Georgia, serif;
+}
+
+
+
+/* ==========================================================================
+   CSS Reset & Base Rules
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--text-main);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   Utility Classes & Layout
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  background-color: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.875rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Glassmorphism Surface */
+.glass-panel {
+  background: var(--bg-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-top: 4px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(157, 34, 53, 0.04);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(157, 34, 53, 0.16), 0 4px 12px rgba(0, 0, 0, 0.06);
+  border-color: #cbd5e1;
+  border-top-color: var(--color-primary-dark);
+}
+
+.card-gold {
+  border-top-color: var(--color-accent) !important;
+}
+
+.card-gold:hover {
+  border-top-color: #ffb606 !important;
+}
+
+/* Eudaimonia Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 1.1rem 2rem;
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #212121;
+  color: #ffffff;
+}
+
+.btn2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 1.1rem 2rem;
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: transparent;
+  color: #141b22;
+  border: 1px solid #141b22;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.btn2 svg, .btn2 i {
+  transition: transform var(--transition-normal);
+  color: var(--color-primary-dark);
+}
+
+.btn2:hover {
+  background: var(--color-primary-dark);
+  color: #ffffff;
+  border-color: var(--color-primary-dark);
+}
+
+.btn2:hover svg, .btn2:hover i {
+  color: #ffffff;
+  transform: translate(2px, -2px);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #212121;
+}
+
+.btn-accent {
+  background: var(--color-primary-dark);
+  color: #ffffff;
+}
+
+.btn-accent:hover {
+  background: var(--color-primary);
+}
+
+.btn-outline {
+  border: 1px solid #212121;
+  color: #212121;
+  background: transparent;
+  border-radius: 0;
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-sm {
+  padding: 0.75rem 1.4rem;
+  font-size: 0.8125rem;
+}
+
+.btn-lg {
+  padding: 1.25rem 2.5rem;
+  font-size: 0.95rem;
+}
+
+/* Spin Animation for 25-Years Circular Badge */
+@keyframes spinBadge {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spin-badge {
+  animation: spinBadge 18s linear infinite;
+}
+
+.btn-ghost {
+  color: var(--text-main);
+}
+
+.btn-ghost:hover {
+  background: var(--bg-subtle);
+  color: var(--color-primary);
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-lg {
+  padding: 0.95rem 2rem;
+  font-size: 1.0625rem;
+  border-radius: var(--radius-md);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+}
+
+.badge-primary {
+  background: rgba(15, 52, 96, 0.1);
+  color: var(--color-primary);
+}
+
+.badge-accent {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+}
+
+.badge-success {
+  background: rgba(16, 185, 129, 0.12);
+  color: #059669;
+}
+
+.badge-rose {
+  background: rgba(244, 63, 94, 0.12);
+  color: #e11d48;
+}
+
+[data-theme="dark"] .badge-primary {
+  background: rgba(157, 34, 53, 0.25);
+  color: #ff8a9a;
+}
+
+[data-theme="dark"] .badge-accent {
+  background: rgba(214, 177, 97, 0.2);
+  color: #ffcf70;
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(157, 34, 53, 0.15);
+}
+
+[data-theme="dark"] .form-input:focus, 
+[data-theme="dark"] .form-select:focus, 
+[data-theme="dark"] .form-textarea:focus {
+  border-color: var(--color-primary-light);
+  box-shadow: 0 0 0 3px rgba(184, 43, 64, 0.25);
+}
+
+/* ==========================================================================
+   Eudaimonia Standard Inner Page Header Banner
+   ========================================================================== */
+.page-header-banner {
+  background: linear-gradient(135deg, #440d16 0%, #641320 40%, #1a0508 100%);
+  color: #ffffff;
+  padding: 5rem 0 4rem 0;
+  text-align: center;
+  position: relative;
+  border-bottom: 3px solid var(--color-primary);
+  overflow: hidden;
+}
+
+.page-header-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(214, 177, 97, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(157, 34, 53, 0.25) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.page-header-banner .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page-header-banner .section-tag {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffcf70;
+  margin-bottom: 1rem;
+}
+
+.page-header-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.page-header-desc {
+  max-width: 720px;
+  margin: 0 auto 1.5rem auto;
+  font-size: 1.1rem;
+  color: #e5d8dc;
+  line-height: 1.7;
+}
+
+.breadcrumb-trail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: #c9b4ba;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 0.4rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.breadcrumb-trail a {
+  color: #ffcf70;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb-trail a:hover {
+  color: #ffffff;
+}
+
+.breadcrumb-trail .separator {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Infinite Marquee for Placements & Notices */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+/* Pulse animation */
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+.pulse-live {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-emerald);
+  border-radius: 50%;
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}

@@ -1,0 +1,687 @@
+/* ==========================================================================
+   Eudaimonia University Header & Menu Styles (Light Pure Mode)
+   ========================================================================== */
+
+.eudaimonia-header {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+}
+
+.header-container {
+  max-width: 1420px;
+  width: 100%;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   1. HEADER TOP (Deep Wine #641320)
+   ========================================================================== */
+.header-top.second-header {
+  background: #641320;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.header-top-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.header-cta ul {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header-cta ul li a {
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: opacity var(--transition-fast);
+}
+
+.header-cta ul li a:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+}
+
+.aktu-code-tag {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffb606;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(255, 182, 6, 0.3);
+}
+
+.call-box {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 12.5px;
+}
+
+.call-box a {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.header-top-icon {
+  color: #ffb606;
+}
+
+.inline-icon {
+  margin-top: 1px;
+}
+
+/* ERP / Student Login Pill in Header Top */
+.top-portal-pill {
+  background: rgba(255, 182, 6, 0.2);
+  color: #ffcf70 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 182, 6, 0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all var(--transition-fast);
+}
+
+.top-portal-pill:hover {
+  background: #ffb606;
+  color: #641320 !important;
+  text-decoration: none !important;
+}
+
+/* ==========================================================================
+   2. MENU AREA (Sticky Header with Pure Light University Styling)
+   ========================================================================== */
+.menu-area {
+  background: #ffffff;
+  position: relative;
+  z-index: 99;
+  transition: all var(--transition-normal);
+  border-bottom: 2px solid #f1f5f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.sticky-menu {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(25, 25, 25, 0.08);
+  animation: fadeInDown 0.35s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.menu-area-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 86px;
+  gap: 1rem;
+}
+
+.sticky-menu .menu-area-inner {
+  height: 74px;
+}
+
+/* Logo */
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.eudaimonia-logo-crest {
+  width: 44px;
+  height: 44px;
+  background: #9D2235;
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(157, 34, 53, 0.25);
+  flex-shrink: 0;
+}
+
+.logo-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-main-name {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #141b22;
+  line-height: 1.15;
+}
+
+.logo-tagline {
+  font-size: 0.68rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+/* Main Navigation */
+.main-menu {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.main-menu nav > ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.6rem, 1.1vw, 1.35rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: nowrap;
+}
+
+.main-menu nav > ul > li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.main-menu nav > ul > li > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #141b22;
+  padding: 28px 0;
+  transition: color var(--transition-fast);
+  letter-spacing: 0.02em;
+}
+
+.main-menu nav > ul > li:hover > a,
+.main-menu nav > ul > li.active > a {
+  color: #9D2235;
+}
+
+.menu-arrow-icon {
+  transition: transform var(--transition-fast);
+  color: #718096;
+}
+
+.main-menu nav > ul > li:hover .menu-arrow-icon {
+  transform: rotate(180deg);
+  color: #9D2235;
+}
+
+/* Submenu */
+.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 260px;
+  background: #ffffff;
+  border-top: 3px solid #9D2235;
+  box-shadow: 0 12px 28px rgba(25, 25, 25, 0.12);
+  padding: 0.25rem 0;
+  margin: 0;
+  list-style: none;
+  z-index: 100;
+  animation: fadeInDown 0.25s ease-out;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  border-left: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sub-menu li {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.sub-menu li:last-child {
+  border-bottom: none;
+}
+
+.sub-menu li a {
+  display: block;
+  padding: 10px 18px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #4a5568;
+  text-transform: none;
+  transition: all var(--transition-fast);
+}
+
+.sub-menu li a:hover {
+  background: rgba(157, 34, 53, 0.06);
+  color: #9D2235;
+  padding-left: 22px;
+}
+
+.main-menu nav > ul > li:nth-last-child(-n+2) .sub-menu {
+  left: auto;
+  right: 0;
+}
+
+/* Right Header Action */
+.header-right-action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.login ul {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-tigger {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #141b22;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+}
+
+.menu-tigger:hover {
+  background: #9D2235;
+  border-color: #9D2235;
+  color: #ffffff;
+}
+
+/* Live Pulse Dot */
+.live-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #ffb606;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(255, 182, 6, 0.7);
+  animation: pulseGold 1.6s infinite;
+}
+
+@keyframes pulseGold {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 182, 6, 0.7);
+  }
+  70% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 6px rgba(255, 182, 6, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 182, 6, 0);
+  }
+}
+
+/* Top bar Apply Online pill */
+.top-apply-badge-link {
+  background: rgba(255, 182, 6, 0.25);
+  color: #ffcf70 !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 182, 6, 0.5);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: all var(--transition-fast);
+}
+
+.top-apply-badge-link:hover {
+  background: #ffb606;
+  color: #641320 !important;
+  text-decoration: none !important;
+}
+
+/* Prominent Header Apply Online Button */
+.btn-header-apply {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 11px 20px;
+  background: var(--color-primary);
+  color: #ffffff !important;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-primary);
+  box-shadow: 0 4px 14px rgba(157, 34, 53, 0.35);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-header-apply:hover {
+  background: #641320;
+  border-color: #641320;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(100, 19, 32, 0.45);
+  transform: translateY(-2px);
+}
+
+.btn-header-apply .sparkle-icon {
+  color: #ffb606;
+}
+
+/* Floating Apply Online Button (Always visible on all pages) */
+.floating-apply-badge {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  background: linear-gradient(135deg, #641320 0%, #9D2235 100%);
+  color: #ffffff;
+  padding: 13px 20px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 8px 25px rgba(157, 34, 53, 0.45), 0 2px 6px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 182, 6, 0.6);
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.floating-apply-badge:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 14px 35px rgba(157, 34, 53, 0.6);
+  border-color: #ffb606;
+  color: #ffffff;
+}
+
+.floating-apply-badge .live-pulse-dot {
+  width: 9px;
+  height: 9px;
+}
+
+/* Search Flyout */
+.eudaimonia-search-flyout {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-top: 2px solid #9D2235;
+  padding: 1.25rem 0;
+  z-index: 999;
+}
+
+.search-flyout-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.flyout-icon {
+  color: #9D2235;
+}
+
+.flyout-input {
+  flex: 1;
+  border: 1px solid var(--border-subtle);
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  background: var(--bg-surface);
+}
+
+.close-search-btn {
+  background: none;
+  border: none;
+  color: #8a8a8a;
+  cursor: pointer;
+}
+
+.close-search-btn:hover {
+  color: #9D2235;
+}
+
+.mobile-toggle-btn {
+  display: none;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #141b22;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+}
+
+/* Mobile Drawer Overlay */
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 2000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mobile-drawer-panel {
+  width: 85%;
+  max-width: 380px;
+  height: 100%;
+  background: #ffffff;
+  padding: 1.75rem;
+  overflow-y: auto;
+  box-shadow: -10px 0 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.drawer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #9D2235;
+}
+
+.close-drawer-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #641320;
+}
+
+.mobile-quick-actions {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.mobile-portal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #641320;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 9px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+}
+
+.mobile-portal-btn:hover {
+  background: #641320;
+  color: #ffffff;
+}
+
+.mobile-drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.mobile-nav-block {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.mobile-nav-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-link-row {
+  display: block;
+  padding: 0.85rem 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #141b22;
+  text-transform: uppercase;
+  flex: 1;
+}
+
+.mobile-link-row:hover {
+  color: #9D2235;
+}
+
+.mobile-expand-btn {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #718096;
+}
+
+.expand-caret {
+  transition: transform var(--transition-fast);
+}
+
+.expand-caret.expanded {
+  transform: rotate(180deg);
+  color: #9D2235;
+}
+
+.mobile-sub-accordion {
+  background: #f8fafc;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.mobile-sub-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 12.5px;
+  color: #4a5568;
+  padding: 6px 4px;
+  font-weight: 500;
+}
+
+.mobile-sub-link:hover {
+  color: #9D2235;
+  padding-left: 8px;
+}
+
+.sub-arrow {
+  color: #9D2235;
+  flex-shrink: 0;
+}
+
+.mobile-drawer-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+  font-size: 12px;
+  color: #718096;
+  line-height: 1.6;
+}
+
+.mobile-drawer-footer strong {
+  color: #141b22;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1040px) {
+  .main-menu {
+    display: none;
+  }
+  .second-header-btn {
+    display: none;
+  }
+  .mobile-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-top {
+    display: none;
+  }
+}

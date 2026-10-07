@@ -1,0 +1,500 @@
+/* Online Payment Portal Styles - Eudaimonia Luxury Theme */
+
+.payment-page {
+  background: var(--bg-surface, #f8fafc);
+  min-height: 80vh;
+}
+
+.payment-main-section {
+  padding: 3rem 0 5rem;
+}
+
+.payment-grid-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 2.25rem;
+  align-items: start;
+}
+
+/* Category Selector */
+.category-selector-card {
+  padding: 1.75rem 2rem;
+  margin-bottom: 2rem;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-top: 4px solid var(--color-primary, #9D2235);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.card-box-title {
+  font-family: var(--font-heading, 'Prata', serif);
+  font-size: 1.25rem;
+  color: #1e293b;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+
+.category-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.cat-pill-btn {
+  padding: 0.65rem 1.25rem;
+  background: #f1f5f9;
+  border: 1.5px solid #cbd5e1;
+  color: #334155;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cat-pill-btn:hover {
+  background: #f8fafc;
+  border-color: var(--color-primary, #9D2235);
+  color: var(--color-primary, #9D2235);
+}
+
+.cat-pill-btn.active {
+  background: var(--color-primary, #9D2235);
+  border-color: var(--color-primary, #9D2235);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(157, 34, 53, 0.25);
+}
+
+/* Student Details Form */
+.student-details-card {
+  padding: 2.25rem 2rem;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-top: 4px solid var(--color-primary, #9D2235);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 0.45rem;
+}
+
+.form-input, .form-select {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #0f172a;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus, .form-select:focus {
+  outline: none;
+  border-color: var(--color-primary, #9D2235);
+  box-shadow: 0 0 0 3px rgba(157, 34, 53, 0.12);
+}
+
+.amount-highlight-input {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--color-primary, #9D2235);
+  background: #fdf2f4;
+  border-color: #fecdd3;
+}
+
+/* Payment Channel Box */
+.payment-channel-box {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1.5px dashed #cbd5e1;
+  margin: 1.5rem 0;
+}
+
+.channel-options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+}
+
+.channel-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+.channel-pill input {
+  accent-color: var(--color-primary, #9D2235);
+}
+
+.channel-pill.selected {
+  border-color: var(--color-primary, #9D2235);
+  background: #fff5f6;
+  color: var(--color-primary, #9D2235);
+  box-shadow: 0 2px 8px rgba(157, 34, 53, 0.12);
+}
+
+.payment-security-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.825rem;
+  color: #475569;
+  background: #f0fdf4;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #bbf7d0;
+  margin-bottom: 1.5rem;
+}
+
+.pay-submit-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  background: var(--color-primary, #9D2235);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 20px rgba(157, 34, 53, 0.25);
+}
+
+.pay-submit-btn:hover {
+  background: var(--color-primary-dark, #641320);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(157, 34, 53, 0.35);
+}
+
+/* Right Column: Bank Details */
+.bank-accounts-card {
+  padding: 2.25rem 2rem;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-top: 4px solid #ffb606;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+}
+
+.bank-card-sub {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 1.25rem;
+}
+
+.bank-meta-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  background: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+}
+
+.bank-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #475569;
+  border-bottom: 1px dashed #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+.bank-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.bank-row strong {
+  color: #0f172a;
+  text-align: right;
+}
+
+.code-font {
+  font-family: monospace;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  color: var(--color-primary, #9D2235) !important;
+}
+
+.qr-box-mock {
+  text-align: center;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.qr-box-mock p {
+  font-size: 0.825rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.upi-id-tag {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  background: #fee2e2;
+  color: var(--color-primary, #9D2235);
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.payment-faq-card {
+  padding: 1.75rem 2rem;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-top: 4px solid var(--color-primary, #9D2235);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.payment-faq-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.guidelines-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.guidelines-list li {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #475569;
+}
+
+/* E-Receipt View */
+.receipt-card {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  border-top: 6px solid var(--color-primary, #9D2235);
+  border-radius: 10px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.receipt-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 1.75rem;
+}
+
+.receipt-crest {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #fff5f6;
+  border: 2px solid var(--color-primary, #9D2235);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.receipt-college-info h2 {
+  font-family: var(--font-heading, 'Prata', serif);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.35rem;
+}
+
+.receipt-college-info p {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.receipt-official-tag {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--color-primary, #9D2235);
+  border-radius: 4px;
+}
+
+.receipt-status-ribbon {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.receipt-status-ribbon h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #15803d;
+  margin-bottom: 0.2rem;
+}
+
+.receipt-status-ribbon p {
+  font-size: 0.85rem;
+  color: #166534;
+  margin: 0;
+}
+
+.receipt-data-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  background: #f8fafc;
+  padding: 1.75rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 2rem;
+}
+
+.receipt-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.receipt-cell.highlight-cell {
+  grid-column: span 2;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1.5px solid #fecdd3;
+  margin-top: 0.5rem;
+}
+
+.r-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.r-val {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.amount-val {
+  font-size: 1.4rem;
+  color: var(--color-primary, #9D2235);
+  font-weight: 800;
+}
+
+.receipt-footer-notes {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.receipt-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-receipt-view, .print-receipt-view * {
+    visibility: visible;
+  }
+  .print-receipt-view {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .payment-grid-layout {
+    grid-template-columns: 1fr;
+  }
+  .channel-options-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .receipt-card {
+    padding: 1.5rem;
+  }
+  .receipt-data-grid {
+    grid-template-columns: 1fr;
+  }
+  .receipt-cell.highlight-cell {
+    grid-column: span 1;
+  }
+}
